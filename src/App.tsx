@@ -1,5 +1,5 @@
-
-import Navbar from './pages/components/navbar/Navbar';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 
@@ -9,7 +9,7 @@ function App() {
             <Navbar />
             {/* <Home /> */}
             <Login />
-            
+            <Footer />
         </>
     );
 }
