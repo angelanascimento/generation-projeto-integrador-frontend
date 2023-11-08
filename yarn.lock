@@ -332,6 +332,11 @@
   resolved "https://registry.npmjs.org/@phosphor-icons/react/-/react-2.0.14.tgz"
   integrity sha512-VaZ7/JEQ7dW+Up23l7t6lqJ3dPJupM03916Pat+ZOLX1vex9OeX9t8RZLJWt0oVrdc/GcrAyRD5FESDeP+M4tQ==
 
+"@remix-run/router@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.5.0.tgz"
+  integrity sha512-bkUDCp8o1MvFO+qxkODcbhSqRa6P2GXgrGZVpt0dCXNW2HCSCqYI0ZoAqEOSAjRWmmlKcYgFvN4B4S+zo/f8kg==
+
 "@types/babel__core@^7.20.3":
   version "7.20.4"
   resolved "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.20.4.tgz"
@@ -1479,7 +1484,7 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-dom@^18.2.0, "react-dom@>= 16.8":
+react-dom@^18.2.0, "react-dom@>= 16.8", react-dom@>=16.8:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -1492,7 +1497,22 @@ react-refresh@^0.14.0:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.0.tgz"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
-react@^18.2.0, "react@>= 16.8":
+react-router-dom@6.10.0:
+  version "6.10.0"
+  resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.10.0.tgz"
+  integrity sha512-E5dfxRPuXKJqzwSe/qGcqdwa18QiWC6f3H3cWXM24qj4N0/beCIf/CWTipop2xm7mR0RCS99NnaqPNjHtrAzCg==
+  dependencies:
+    "@remix-run/router" "1.5.0"
+    react-router "6.10.0"
+
+react-router@6.10.0:
+  version "6.10.0"
+  resolved "https://registry.npmjs.org/react-router/-/react-router-6.10.0.tgz"
+  integrity sha512-Nrg0BWpQqrC3ZFFkyewrflCud9dio9ME3ojHCF/WLsprJVzkq3q3UeEhMCAW1dobjeGbWgjNn/PVF6m46ANxXQ==
+  dependencies:
+    "@remix-run/router" "1.5.0"
+
+react@^18.2.0, "react@>= 16.8", react@>=16.8:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
