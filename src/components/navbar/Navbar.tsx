@@ -9,16 +9,17 @@ function Navbar() {
                 flex justify-center py-4'>
             
                 <div className="container flex justify-between text-lg">
-                    Comercio Com Causa
+                    <Link to='/home'>Comercio Com Causa</Link>
+                    
 
                     <div className='flex gap-4'>
-                        Compras 
-                        Categorias
-                        Produtos
-                        Cadastrar produtos
-                        Perfil
+                        <Link to='/home'>Home</Link>
+                        <Link to='/about'>Sobre nós</Link>
+                        <Link to='/cadastro'>Cadastro</Link>
+                        <Link to='/produtos'>Produtos</Link>
                         <Link to='/contatos'>Contatos</Link>
-                        Sair
+                        <Link to='/perfil'>Perfil</Link>
+                        <Link to='/sair'>Sair</Link>
                     </div>
                 </div>
             </div>
