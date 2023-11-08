@@ -1,3 +1,6 @@
+import {Link} from 'react-router-dom';
+
+
 
 function Navbar() {
     return (
@@ -14,6 +17,7 @@ function Navbar() {
                         Produtos
                         Cadastrar produtos
                         Perfil
+                        <Link to='/contatos'>Contatos</Link>
                         Sair
                     </div>
                 </div>
