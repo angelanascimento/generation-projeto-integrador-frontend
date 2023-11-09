@@ -13,16 +13,8 @@ function Footer() {
                             <p className='py-1.5 text-gray-200 text-justify'>Nossa empresa é mais do que apenas um e-commerce de alimentos naturais. Somos uma comunidade que valoriza a sustentabilidade, o crescimento econômico e o trabalho decente. Junte-se a nós em nossa missão de fazer a diferença no mundo, um produto de cada vez.</p>
                         </div>
                         
-                        
                         <div className='w-38 px-2 mt-2 text-gray-200 ml-14'>
-                            <h4 className='text-lg font-bold mb-2 text-white'>Mapa do Site</h4>
-                            <ul>
-                                <li>Sobre nós</li>
-                                <li>Produtos</li>
-                                <li>Cadastro</li>
-                                <li>Contato</li>
-                                <li></li>
-                            </ul>
+                            
                         </div>
                         <div className='w-1/5 mt-2 text-gray-200 ml-14'>
                             <h4 className='text-lg font-bold mb-2 text-white'>Contatos</h4>
@@ -51,9 +43,9 @@ function Footer() {
                         <div className='flex flex-col w-1/5 px-2 self-center items-center'>
                             <h4 className='text-lg text-center font-bold mb-3'>Siga Nós</h4>
                             <div className='flex justify-between w-3/5' >
-                                <LinkedinLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all' />
-                                <InstagramLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all' />
-                                <FacebookLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all' />
+                                <a href="https://www.linkedin.com/" target='_blank'><LinkedinLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all'/></a>
+                                <a href="https://www.instagram.com/" target='_blank'><InstagramLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all'/></a>
+                                <a href="https://www.facebook.com/" target='_blank'><FacebookLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all'/></a>
                         </div>
                     </div>
                 </div>
