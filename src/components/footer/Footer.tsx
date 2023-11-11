@@ -1,4 +1,5 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
+import {Link} from 'react-router-dom';
 
 function Footer() {
 
@@ -6,17 +7,22 @@ function Footer() {
 
     return (
         <>
-            <div className="flex flex-col justify-center items-center bg-[#2A332A] text-white ">
-                <div className="container flex justify-between mt-6 mb-6">
-                        <div className='w-1/3 self-center' >
-                            <img className='w-2/3 py-1.5 mb-2' src="./src/assets/img/comercio_com_causa_letreiro-mod.png" alt="" />
+            <footer className="flex flex-col justify-center items-center bg-[#2A332A] text-white">
+                <div className="flex flex-wrap justify-between md:mb-6 w-11/12 xl:mt-6  xl:flex-nowrap xl:w-5/6 ">
+                        <div className='self-center w-full mb-4 mt-6 xl:w-1/3 xl:m-0'>
+                            <img className='py-1.5 mb-2 w-72' src="./src/assets/img/comercio_com_causa_letreiro-mod.png" alt=""/>
                             <p className='py-1.5 text-gray-200 text-justify'>Nossa empresa é mais do que apenas um e-commerce de alimentos naturais. Somos uma comunidade que valoriza a sustentabilidade, o crescimento econômico e o trabalho decente. Junte-se a nós em nossa missão de fazer a diferença no mundo, um produto de cada vez.</p>
                         </div>
-                        
-                        <div className='w-38 px-2 mt-2 text-gray-200 ml-14'>
-                            
+                        <div className='mt-2 text-gray-200 w-1/3 md:w-1/4 xl:w-32 38 xl:px-2 xl:ml-14'>
+                            <h4 className='text-lg font-bold mb-2 text-white'>Mapa do Site</h4>
+                                <ul>
+                                    <li><Link to='/about'>Sobre nós</Link></li>
+                                    <li><Link to='/produtos'>Produtos</Link></li>
+                                    <li><Link to='/cadastro'>Cadastro</Link></li>
+                                    <li><Link to='/contatos'>Contato</Link></li>
+                                </ul>
                         </div>
-                        <div className='w-1/5 mt-2 text-gray-200 ml-14'>
+                        <div className='mt-2 text-gray-200 w-3/5 md:ml-0 md:w-2/5 xl:ml-14 xl:w-1/5'>
                             <h4 className='text-lg font-bold mb-2 text-white'>Contatos</h4>
                             <ul>
                                 <li className='flex py-1.5'>  
@@ -40,9 +46,9 @@ function Footer() {
                                 </li>
                             </ul>
                         </div>
-                        <div className='flex flex-col w-1/5 px-2 self-center items-center'>
-                            <h4 className='text-lg text-center font-bold mb-3'>Siga Nós</h4>
-                            <div className='flex justify-between w-3/5' >
+                        <div className='flex flex-col px-2 self-center items-center w-full my-8 md:w-2/6 xl:w-1/5'>
+                            <h4 className='text-lg font-bold mb-3'>Siga-Nos</h4>
+                            <div className='flex justify-around w-3/6 md:w-3/4 xl:w-3/4' >
                                 <a href="https://www.linkedin.com/" target='_blank'><LinkedinLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all'/></a>
                                 <a href="https://www.instagram.com/" target='_blank'><InstagramLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all'/></a>
                                 <a href="https://www.facebook.com/" target='_blank'><FacebookLogo size={48} className='stroke-2 text-[#2FBF2A] hover:scale-110 transition-all'/></a>
@@ -55,7 +61,7 @@ function Footer() {
                             Comércio com Causa {data} | © Todos os direitos reservados
                     </p>
                 </div>
-            </div>
+            </footer>
         </>
     )
 }
