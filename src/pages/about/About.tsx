@@ -1,34 +1,41 @@
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 import './About.css'
+import Seals from '../../components/seals/Seals';
+import PhotosAbout from '../../components/photos/PhotosAbout';
 
 function About() {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center h-screen">
-            <h2 className="text-slate-900 text-5xl font-bold">Sobre Nós</h2>
-                <div className="">
-                    
-                    <h3>Conexão com Propósito:</h3>
-                    <p>O marketplace serve como uma ponte entre consumidores que desejam apoiar causas significativas e ONGs dedicadas a fazer a diferença em áreas como educação, saúde, meio ambiente e muito mais.</p>
-                    <h3>Produtos com Impacto:</h3>
-                    <p>Os produtos apresentados no "Comércio com Causa" não são apenas produtos comuns, mas itens que carregam uma narrativa de mudança social. Cada compra tem um propósito, ajudando a financiar projetos e iniciativas das ONGs.</p>
-                    <h3>Transparência Total:</h3>
-                    <p>A transparência é a espinha dorsal do marketplace. Os consumidores podem ver exatamente como seu dinheiro está sendo usado e qual é o impacto de suas compras.</p>
-                    <h3>Sustentabilidade e Ética:</h3>
-                    <p>O "Comércio com Causa" está comprometido com práticas de negócios sustentáveis e éticas. Isso se reflete na seleção de produtos e nas políticas de comércio justo.</p>
-                    <h3>Amplificação do ODS 8:</h3>
-
-                    <p>
-                    À medida que a conscientização sobre questões sociais e ambientais cresce, o "Comércio com Causa" se posiciona como uma plataforma pioneira, alinhando os princípios do desenvolvimento sustentável com o poder do comércio. Ele não é apenas um marketplace, mas uma expressão tangível da crença de que, juntos, podemos tornar o mundo um lugar melhor.
-                    </p>
-                    <p>Se você é um consumidor em busca de produtos com propósito ou uma ONG procurando ampliar seu alcance e impacto, o "Comércio com Causa" é o lugar onde o comércio e a causa se encontram, criando um futuro mais brilhante e inclusivo para todos. Junte-se a essa jornada e faça parte dessa mudança positiva!</p>
-                </div>
-                <div>
-                    <img src="" alt="" />
-                </div>
-            </div>
+            <main className="flex flex-col justify-center items-center w-screen">
+                <div className="flex flex-col mt-16 mb-16 w-5/6 items-start justify-between xl:flex-row">
+                    <PhotosAbout/>
+                    <div className="w-full xl:w-7/12 xl:flex xl:flex-col xl:ml-20 xl:h-screen xl:justify-center">
+                        <h2 className="text-slate-900 text-center text-5xl font-bold mb-9 ">Sobre Nós</h2>
+                        <p className='text-justify mb-3 text-gray-800'>
+                        Criada com o propósito de promover o desenvolvimento e o crescimento econômico de pequenos e médios produtores que praticam uma agricultura sustentável, o Comércio com Causa conecta pessoas  por meio de uma plataforma online, acessível e segura, que permite  a conexão entre produtores e os consumidores que valorizam a qualidade, a origem e o impacto social dos alimentos que adquirem.  O propósito da nossa empresa esta fundamentada no Objetivo de
+                        Desenvolvimento Sustentável (ODS) 8 das Nações Unidas, que busca promover o crescimento econômico inclusivo e sustentável, o emprego pleno e produtivo e o trabalho decente para todos.
+                        </p>
+                        <p className='text-justify mb-3 text-gray-800'>
+                        À medida que a conscientização sobre questões sociais e ambientais cresce, o Comércio com Causa se posiciona como uma plataforma pioneira, alinhando os princípios do desenvolvimento sustentável com o poder do comércio. Ele não é apenas um marketplace, mas uma expressão tangível da crença de que, juntos, podemos tornar o mundo um lugar melhor.
+                        </p>
+                        <p className='text-justify mb-12 text-gray-800'>Se você é um consumidor em busca de produtos com propósito ou uma ONG procurando ampliar seu alcance e impacto, o Comércio com Causa é o lugar onde o comércio e a causa se encontram, criando um futuro mais brilhante e inclusivo para todos. Junte-se a essa jornada e faça parte dessa mudança positiva!</p>
+                        <div className='w-full flex text-center justify-center'>
+                                <div className=' font-medium text-orange-600 w-full md:w-2/3 lg:w-1/2 xl:w-3/5'>
+                                    <p>Nossa plataforma é mais do que um canal de vendas, é uma rede de colaboração e transformação social. Venha fazer parte dela!</p>
+                                    <div className='flex justify-around mt-5'>
+                                        <button className='bg-[#14202F] rounded-md p-3.5 w-44 md:w-52 xl:w-52  text-white hover:bg-white
+                                        hover: border-2 border-black hover:text-black transition-all'>Conheça nossos produtos</button>
+                                        <button className='bg-[#14202F] rounded-md p-3.5 w-44 md:w-52 xl:w-52 text-white hover:bg-white
+                                        hover: border-2 border-black hover:text-black transition-all'>Conheça nossos  fornecedores</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <Seals />
+            </main>
         </>
     )
 }

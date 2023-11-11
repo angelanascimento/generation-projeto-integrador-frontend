@@ -10,8 +10,8 @@ function Footer() {
             <footer className="flex flex-col justify-center items-center bg-[#2A332A] text-white">
                 <div className="flex flex-wrap justify-between md:mb-6 w-11/12 xl:mt-6  xl:flex-nowrap xl:w-5/6 ">
                         <div className='self-center w-full mb-4 mt-6 xl:w-1/3 xl:m-0'>
-                            <img className='py-1.5 mb-2 w-72' src="./src/assets/img/comercio_com_causa_letreiro-mod.png" alt=""/>
-                            <p className='py-1.5 text-gray-200 text-justify'>Nossa empresa é mais do que apenas um e-commerce de alimentos naturais. Somos uma comunidade que valoriza a sustentabilidade, o crescimento econômico e o trabalho decente. Junte-se a nós em nossa missão de fazer a diferença no mundo, um produto de cada vez.</p>
+                            <img className='py-1.5 mb-2 w-72' src="./src/assets/img/logos/comercio_com_causa_letreiro-mod.png" alt="logo Comercio com Causa nas cores verde e branca"/>
+                            <p className='py-1.5 text-gray-200 text-justify md:w-2/3 xl:w-full'>Nossa empresa é mais do que apenas um e-commerce de alimentos naturais. Somos uma comunidade que valoriza a sustentabilidade, o crescimento econômico e o trabalho decente. Junte-se a nós em nossa missão de fazer a diferença no mundo, um produto de cada vez.</p>
                         </div>
                         <div className='mt-2 text-gray-200 w-1/3 md:w-1/4 xl:w-32 38 xl:px-2 xl:ml-14'>
                             <h4 className='text-lg font-bold mb-2 text-white'>Mapa do Site</h4>
