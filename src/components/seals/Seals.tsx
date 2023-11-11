@@ -8,11 +8,11 @@ function Seals() {
                     <p> Selos e Certificações:</p>
                 </div>        
                 <ul className='flex justify-around w-full xl:w-3/4 '>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4 'src="src\assets\img\Logo-Selo-GAAS-1-768x768.png" alt="" /></li>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4'src="src\assets\img\Selo-IBD-Orgânico-mod.png" alt="" /></li>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4'src="src\assets\img\premiosesiods-selosesiods2023-v01-empresa.png" alt="" /></li>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4'src="src\assets\img\b7141008-981e-43e9-8983-7ffa69831d92.png" alt="" /></li>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4 'src="src/assets/img/produto-organico-brasil-logo-mod.png" alt="" /></li>
+                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4 'src="src/assets/img/seals/selo-GAAS.png" alt="" /></li>
+                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4 'src="src/assets/img/seals/selo-IBD.png" alt="" /></li>
+                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4'src="src/assets/img/seals/selo-SESI-ODS.png" alt=""/></li>
+                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4 'src="src/assets/img/seals/selo-mais-integridade.png" alt=""/></li>
+                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4'src="src/assets/img/seals/selo-produto-organico-Brasil.png" alt="" /></li>
                 </ul>        
             </div>
         </>
