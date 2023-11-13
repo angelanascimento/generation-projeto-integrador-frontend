@@ -16,5 +16,6 @@ export default interface Usuario {
     password: string;
     token: string;
     created_at: string;
+    postagem?: Produto | null;
 
 }
