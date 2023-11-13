@@ -1,10 +1,10 @@
 import Produto from "./Produto";
 
 export default interface Usuario {
-    id: bigint;
+    id: number;
     cpf: string;
     cnpj: string;
-    cep: String;
+    cep:  string;
     name: string;
     about: string;
     gender: string;
@@ -16,5 +16,5 @@ export default interface Usuario {
     password: string;
     token: string;
     created_at: string;
-    products: Produto | null;
+
 }
