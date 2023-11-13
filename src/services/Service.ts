@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://comercio-com-causa.onrender.com/'
+    baseURL: 'https://comercio-com-causa.onrender.com'
 })
 
 export const login = async (url: string, dados: Object, setDados: Function) => {
