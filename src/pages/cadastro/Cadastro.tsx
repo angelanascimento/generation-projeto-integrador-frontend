@@ -62,7 +62,7 @@ function Cadastro() {
       setIsLoading(true)
 
       try {
-        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
+        await cadastrarUsuario(`/users/sign-up`, usuario, setUsuario)
         alert('Usuário cadastrado com sucesso')
 
       } catch (error) {
