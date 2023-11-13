@@ -2,19 +2,20 @@ function Seals() {
     
     return(
         <>
-            <hr className='w-5/6 m-8'/>
-            <div className='flex flex-col w-full mb-8 xl:justify-around xl:flex-row xl:w-5/6'>
-                <div className=" flex flex-col text-2xl font-medium w-22 mb-6 self-center items-center xl:ml-10 ">
-                    <p> Selos e Certificações:</p>
-                </div>        
-                <ul className='flex justify-around w-full xl:w-3/4 '>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4 'src="src/assets/img/seals/selo-GAAS.png" alt="" /></li>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4 'src="src/assets/img/seals/selo-IBD.png" alt="" /></li>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4'src="src/assets/img/seals/selo-SESI-ODS.png" alt=""/></li>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4 'src="src/assets/img/seals/selo-mais-integridade.png" alt=""/></li>
-                    <li><img className='h-20 p-3 md:h-24 md:p-2 xl:h-28 xl:p-4'src="src/assets/img/seals/selo-produto-organico-Brasil.png" alt="" /></li>
-                </ul>        
-            </div>
+            <section className="flex justify-around h-[9rem] items-center xl:w-[800px] xl:h-[5rem]">
+                <div className='flex flex-col items-center w-[460px] md:w-[650px] xl:w-[890px] xl:flex-row'>
+                    <div className=" flex flex-col w-22 mb-4 self-center items-center xl:w-[240px] xl:m-0">
+                        <h4 className="text-lg font-medium text-center"> Selos e Certificações:</h4>
+                    </div>        
+                    <ul className='flex justify-around w-full'>
+                        <li><img className='h-[75px] p-2 md:h-[85px] md:p-2 xl:h-[85px]'src="src/assets/img/seals/selo-GAAS.png" alt="" /></li>
+                        <li><img className='h-[75px] p-2 md:h-[85px] md:p-2 xl:h-[85px] 'src="src/assets/img/seals/selo-IBD.png" alt="" /></li>
+                        <li><img className='h-[75px] p-2 md:h-[85px] md:p-2 xl:h-[85px] 'src="src/assets/img/seals/selo-SESI-ODS.png" alt=""/></li>
+                        <li><img className='h-[75px] p-2 md:h-[85px] md:p-2 xl:h-[85px] 'src="src/assets/img/seals/selo-mais-integridade.png" alt=""/></li>
+                        <li><img className='h-[75px] p-2 md:h-[85px] md:p-2 xl:h-[85px] 'src="src/assets/img/seals/selo-produto-organico-Brasil.png" alt="" /></li>
+                    </ul>       
+                </div>
+            </section>
         </>
     )
 }

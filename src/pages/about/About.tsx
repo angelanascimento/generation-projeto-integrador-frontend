@@ -3,6 +3,7 @@
 import './About.css'
 import Seals from '../../components/seals/Seals';
 import PhotosAbout from '../../components/photos/PhotosAbout';
+import PaymentMethods from '../../components/payment-methods/PaymentMethods';
 
 function About() {
 
@@ -34,7 +35,13 @@ function About() {
                             </div>
                         </div>
                     </div>
-                <Seals />
+                    <div className="flex items-center justify-center bg-[#F5F5F5] w-full py-2">
+                        <div className="flex flex-col items-center xl:flex xl:flex-row xl:justify-between xl:w-5/6 xl:h-[5rem]" >
+                            <Seals/>
+                            <hr className='w-5/6 m-2 xl:hidden'/>
+                            <PaymentMethods/>
+                        </div>
+                    </div>
             </main>
         </>
     )
