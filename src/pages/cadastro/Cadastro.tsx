@@ -16,7 +16,7 @@ function Cadastro() {
   const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
   const [usuario, setUsuario] = useState<Usuario>({
-    id: 0n,
+    id: 0,
     cpf: "",
     cnpj: "",
     cep: "",
@@ -26,15 +26,14 @@ function Cadastro() {
     ethnicity: "",
     born: "",
     url: "",
-    type: "",
+    type: "admin",
     email: "",
     password: "",
-    created_at: "",
-    products: null
+    created_at: ""
   })
 
   useEffect(() => {
-    if (usuario.id !== 0n) {
+    if (usuario.id !== 0) {
       retornar()
     }
   }, [usuario])
@@ -171,18 +170,6 @@ function Cadastro() {
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="nascimento">Data de Nascimento</label>
-            <input
-              type="text"
-              id="nascimento"
-              name="born"
-              placeholder="dd/mm/aaaa"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuario.born}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
             <label htmlFor="etnia">Etnia</label>
             <input
               type="text"
@@ -191,18 +178,6 @@ function Cadastro() {
               placeholder="Ethnicity"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.ethnicity}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="tipo">Tipo</label>
-            <input
-              type="text"
-              id="tipo"
-              name="type"
-              placeholder="Type"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuario.type}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
