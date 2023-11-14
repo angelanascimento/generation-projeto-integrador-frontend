@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { cadastrarUsuario } from '../../services/Service'
 import Usuario from '../../models/Usuario'
-//import Produto from '../../models/Produto'
+
 
 import './Cadastro.css'
 
@@ -16,7 +16,7 @@ function Cadastro() {
   const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
   const [usuario, setUsuario] = useState<Usuario>({
-    id: 0,
+    id: 0n,
     cpf: "",
     cnpj: "",
     cep: "",
@@ -29,13 +29,12 @@ function Cadastro() {
     type: "",
     email: "",
     password: "",
-    token: "",
-    created_at: ""
-
+    created_at: "",
+    products: null
   })
 
   useEffect(() => {
-    if (usuario.id !== 0) {
+    if (usuario.id !== 0n) {
       retornar()
     }
   }, [usuario])
@@ -91,7 +90,7 @@ function Cadastro() {
             <input
               type="text"
               id="nome"
-              name="nome"
+              name="name"
               placeholder="Nome"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.name}
@@ -103,8 +102,8 @@ function Cadastro() {
             <input
               type="text"
               id="usuario"
-              name="usuario"
-              placeholder="Usuario"
+              name="email"
+              placeholder="exemplo@gmai.com"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.email}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -152,7 +151,7 @@ function Cadastro() {
             <input
               type="text"
               id="sobre"
-              name="sobre"
+              name="about"
               placeholder="Sobre"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.about}
@@ -160,10 +159,10 @@ function Cadastro() {
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="gender">Gênero</label>
+            <label htmlFor="genero">Gênero</label>
             <input
               type="text"
-              id="gender"
+              id="genero"
               name="gender"
               placeholder="Gender"
               className="border-2 border-slate-700 rounded p-2"
@@ -172,10 +171,22 @@ function Cadastro() {
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="ethnicity">Etnia</label>
+            <label htmlFor="nascimento">Data de Nascimento</label>
             <input
               type="text"
-              id="ethnicity"
+              id="nascimento"
+              name="born"
+              placeholder="dd/mm/aaaa"
+              className="border-2 border-slate-700 rounded p-2"
+              value={usuario.born}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+          <div className="flex flex-col w-full">
+            <label htmlFor="etnia">Etnia</label>
+            <input
+              type="text"
+              id="etnia"
               name="ethnicity"
               placeholder="Ethnicity"
               className="border-2 border-slate-700 rounded p-2"
@@ -184,10 +195,10 @@ function Cadastro() {
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="type">Tipo</label>
+            <label htmlFor="tipo">Tipo</label>
             <input
               type="text"
-              id="type"
+              id="tipo"
               name="type"
               placeholder="Type"
               className="border-2 border-slate-700 rounded p-2"
@@ -195,13 +206,12 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
-
           <div className="flex flex-col w-full">
             <label htmlFor="foto">Foto</label>
             <input
               type="text"
               id="foto"
-              name="foto"
+              name="url"
               placeholder="Foto"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.url}
@@ -213,7 +223,7 @@ function Cadastro() {
             <input
               type="password"
               id="senha"
-              name="senha"
+              name="password"
               placeholder="Senha"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.password}

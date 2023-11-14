@@ -46,7 +46,7 @@ function Login() {
                         <input
                             type="text"
                             id="usuario"
-                            name="usuario"
+                            name="email"
                             placeholder="Usuario"
                             className="border-2 border-slate-700 rounded p-2"
                             value={usuarioLogin.email}
@@ -58,7 +58,7 @@ function Login() {
                         <input
                             type="password"
                             id="senha"
-                            name="senha"
+                            name="password"
                             placeholder="Senha"
                             className="border-2 border-slate-700 rounded p-2"
                             value={usuarioLogin.password} 
