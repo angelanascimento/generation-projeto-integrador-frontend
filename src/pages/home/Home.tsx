@@ -1,12 +1,9 @@
-import { useContext } from "react"
-import { AuthContext } from "../../contexts/AuthContext"
 
 import PaymentMethods from "../../components/payment-methods/PaymentMethods"
 import Seals from "../../components/seals/Seals"
 
 function Home() {
 
-    const { nome } = useContext(AuthContext)
 
     return (
         <>
@@ -14,7 +11,7 @@ function Home() {
                 <div className='container grid grid-cols-2 text-white'>
                     <div className="flex flex-col gap-4 items-center justify-center py-4">
                         <h2 className='text-5xl font-bold'>
-                            Seja Bem Vinde, { nome }!
+                            Seja Bem Vinde!
                         </h2>
                         <p className='text-xl'>
                             Expresse aqui seus pensamentos e opniões
