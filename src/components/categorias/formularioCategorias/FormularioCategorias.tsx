@@ -115,6 +115,27 @@ function FormularioCategorias() {
 
         <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
             <div className="flex flex-col gap-2">
+                <label htmlFor="nome">Nome da Categoria</label>
+                <input
+                    type="text"
+                    placeholder="Nome da sua categoria"
+                    name='name'
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={categoria.name}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+
+<input
+                    type="text"
+                    placeholder="Nome da sua categoria"
+                    name='description'
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={categoria.description}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+
+            </div>
+            <div className="flex flex-col gap-2">
                 <label htmlFor="description">Descrição da Categoria</label>
                 <input
                     type="text"

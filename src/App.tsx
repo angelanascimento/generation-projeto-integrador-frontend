@@ -26,7 +26,7 @@ function App() {
               <Route path="/about" element={<About />} /> 
               <Route path="/cadastro" element={<Cadastro />} />           
               <Route path="/contatos" element={<Contatos />} />
-              <Route path="/categories" element={<ListaCategorias />} />
+              <Route path="/categorias" element={<ListaCategorias />} />
               <Route path="/cadastroCategorias" element={<FormularioCategorias />} />
               <Route path="/editarCategorias/:id" element={<FormularioCategorias />} />
             </Routes>

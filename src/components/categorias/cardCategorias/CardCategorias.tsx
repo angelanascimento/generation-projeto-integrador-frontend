@@ -9,7 +9,9 @@ function CardCategorias({ categoria }: CardCategoriasProps) {
     return (
         <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
             <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>
-                Categoria
+                <p className=''>
+                {categoria.name}
+            </p>
             </header>
 
             <p className='p-8 text-3xl bg-slate-200 h-full'>

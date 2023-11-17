@@ -1,8 +1,8 @@
 import Produto from "./Produto";
 
 export default interface Categoria {
-    id: bigint;
+    id: number;
     name: string;
     description: string;
-    products: Produto | null;
+    products ?: Produto | null;
 }
