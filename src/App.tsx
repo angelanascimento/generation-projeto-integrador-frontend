@@ -9,6 +9,7 @@ import Cadastro from './pages/cadastro/Cadastro';
 import Contatos from './pages/contatos/Contatos';
 import About from './pages/about/About';
 import ListaCategorias from './components/categorias/listaCategorias/ListaCategorias';
+import FormularioCategorias from './components/categorias/formularioCategorias/FormularioCategorias';
 
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
               <Route path="/about" element={<About />} /> 
               <Route path="/cadastro" element={<Cadastro />} />           
               <Route path="/contatos" element={<Contatos />} />
-              <Route path="/categorias" element={<ListaCategorias />} />
+              <Route path="/categories" element={<ListaCategorias />} />
+              <Route path="/cadastroCategorias" element={<FormularioCategorias />} />
+              <Route path="/editarCategorias/:id" element={<FormularioCategorias />} />
             </Routes>
           </div>  
         <Footer />
