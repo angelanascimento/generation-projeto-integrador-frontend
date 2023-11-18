@@ -10,6 +10,9 @@ import Contatos from "./pages/contatos/Contatos";
 import About from "./pages/about/About";
 import ListaCategorias from "./components/categorias/listaCategorias/ListaCategorias";
 import FormularioCategorias from "./components/categorias/formularioCategorias/FormularioCategorias";
+import ListaProduto from "./components/produtos/listaProduto/ListaProduto";
+
+
 
 function App() {
   return (
@@ -33,6 +36,7 @@ function App() {
               path="/editarCategoria/:id"
               element={<FormularioCategorias />}
             />
+            <Route path="/produtos" element={<ListaProduto />} />
           </Routes>
         </div>
         <Footer />
