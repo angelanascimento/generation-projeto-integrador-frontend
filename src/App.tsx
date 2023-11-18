@@ -11,7 +11,9 @@ import About from "./pages/about/About";
 import ListaCategorias from "./components/categorias/listaCategorias/ListaCategorias";
 import FormularioCategorias from "./components/categorias/formularioCategorias/FormularioCategorias";
 import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
+import ListaProduto from "./components/produtos/listaProduto/ListaProduto";
 import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -37,7 +39,8 @@ function App() {
               element={<FormularioCategorias />}
             />
             <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
-          </Routes>
+            </Routes>
+            <Route path="/produtos" element={<ListaProduto />} />
         </div>
         <Footer />
       </BrowserRouter>
