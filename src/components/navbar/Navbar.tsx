@@ -7,15 +7,19 @@ import { AuthContext } from '../../contexts/AuthContext';
 function Navbar() {
 
     const navigate = useNavigate()
-    const { handleLogout } = useContext(AuthContext)
+    const { usuario, handleLogout } = useContext(AuthContext)
 
     function logout() {
         handleLogout()
         alert('Usuário deslogado com sucesso')
         navigate('/login')
     }
-    return (
-        <>
+
+    let component: ReactNode
+
+    if (usuario.token !== "") {
+        component = (
+        
             <div className='w-full bg-[#385937] text-white
                 flex justify-center py-4'>
 
@@ -38,6 +42,12 @@ function Navbar() {
                     </div>
                 </div>
             </div>
+        
+    )
+}
+    return (
+        <>
+            { component }
         </>
     )
 }
