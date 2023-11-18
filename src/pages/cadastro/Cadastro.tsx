@@ -7,6 +7,7 @@ import Usuario from '../../models/Usuario'
 
 
 import './Cadastro.css'
+import { toastAlerta } from '../../utils/toastAlerta'
 
 function Cadastro() {
 
@@ -57,24 +58,24 @@ function Cadastro() {
     e.preventDefault()
 
     if (confirmaSenha === usuario.password && usuario.password.length >= 8) {
-      setIsLoading(true)
+        setIsLoading(true)
 
-      try {
-        await cadastrarUsuario(`/users/sign-up`, usuario, setUsuario)
-        alert('Usuário cadastrado com sucesso')
+        try {
+            await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
+            toastAlerta('Usuário cadastrado com sucesso', "sucesso")
 
-      } catch (error) {
-        alert('Erro ao cadastrar o Usuário')
-      }
+        } catch (error) {
+            toastAlerta('Erro ao cadastrar o Usuário', "erro")
+        }
 
     } else {
-      alert('Dados inconsistentes. Verifique as informações de cadastro.')
-      setUsuario({ ...usuario, password: "" })
-      setConfirmaSenha("")
+        toastAlerta('Erro ao cadastrar o Usuário', "erro")
+        setUsuario({ ...usuario, password: "" })
+        setConfirmaSenha("")
     }
 
     setIsLoading(false)
-  }
+}
 
   return (
     
