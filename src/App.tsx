@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-
+import { ToastContainer } from 'react-toastify';
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Footer from "./components/footer/Footer";
@@ -11,10 +11,12 @@ import About from "./pages/about/About";
 import ListaCategorias from "./components/categorias/listaCategorias/ListaCategorias";
 import FormularioCategorias from "./components/categorias/formularioCategorias/FormularioCategorias";
 import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <AuthProvider>
+      <ToastContainer />
       <BrowserRouter>
         <Navbar />
         <div className="min-h-[80vh]">
