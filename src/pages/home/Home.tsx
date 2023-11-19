@@ -2,6 +2,7 @@
 import PaymentMethods from "../../components/payment-methods/PaymentMethods"
 import ListaProduto from "../../components/produtos/listaProduto/ListaProduto"
 import Seals from "../../components/seals/Seals"
+import ModalProduto from "../../components/produtos/modalProduto/ModalProduto"
 
 function Home() {
 
@@ -20,7 +21,7 @@ function Home() {
 
                         <div className="flex justify-around gap-4">
                             <div className="flex justify-around gap-4">
-                            Nova Postagem
+                            <ModalProduto />
                             </div>
                         </div>
                     </div>
