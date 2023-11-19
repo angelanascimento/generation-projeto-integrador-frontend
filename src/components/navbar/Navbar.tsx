@@ -1,3 +1,5 @@
+import "./Navbar.css";
+import logo from "../../assets/img/logos/ico-logo.ico";
 import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -21,8 +23,15 @@ function Navbar() {
         className="w-full bg-[#385937] text-white
                 flex justify-center py-4"
       >
-        <div className="container flex justify-between text-lg">
-          <Link to="/home">Comercio Com Causa</Link>
+        <div className="container flex justify-between text-lg navbarContainer">
+          <Link to="/home">
+            <img
+              className="navbarLogo"
+              src={logo}
+              alt="logo comercio com causa"
+            />
+            {/* Comercio Com Causa */}
+          </Link>
 
           <div className="flex gap-4">
             <Link to="/home" className="hover:underline">

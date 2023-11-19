@@ -1,0 +1,8 @@
+.navbarContainer{
+    display: flex;
+    align-items: center;
+}
+
+.navbarLogo{
+    width:40px;
+}
