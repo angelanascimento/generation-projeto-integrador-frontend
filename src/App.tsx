@@ -39,8 +39,8 @@ function App() {
               element={<FormularioCategorias />}
             />
             <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
-            </Routes>
             <Route path="/produtos" element={<ListaProduto />} />
+            </Routes>
         </div>
         <Footer />
       </BrowserRouter>
