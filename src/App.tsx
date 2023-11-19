@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Footer from "./components/footer/Footer";
@@ -12,8 +12,8 @@ import ListaCategorias from "./components/categorias/listaCategorias/ListaCatego
 import FormularioCategorias from "./components/categorias/formularioCategorias/FormularioCategorias";
 import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
 import ListaProduto from "./components/produtos/listaProduto/ListaProduto";
-import 'react-toastify/dist/ReactToastify.css';
-
+import "react-toastify/dist/ReactToastify.css";
+import DeletarProduto from "./components/produtos/deletarProdutos/DeletarProduto";
 
 function App() {
   return (
@@ -38,9 +38,13 @@ function App() {
               path="/editarCategoria/:id"
               element={<FormularioCategorias />}
             />
-            <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+            <Route
+              path="/deletarCategoria/:id"
+              element={<DeletarCategoria />}
+            />
             <Route path="/produtos" element={<ListaProduto />} />
-            </Routes>
+            <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+          </Routes>
         </div>
         <Footer />
       </BrowserRouter>
