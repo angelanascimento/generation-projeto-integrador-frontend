@@ -6,6 +6,8 @@ import { AuthContext } from "../../../contexts/AuthContext";
 
 import Categoria from "../../../models/Categoria";
 import { RotatingLines } from "react-loader-spinner";
+import { toastAlerta } from "../../../utils/toastAlerta";
+
 
 
 function DeletarCategoria() {
@@ -29,7 +31,7 @@ function DeletarCategoria() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente')
+                toastAlerta('O token expirou, favor logar novamente','erro')
                 handleLogout()
             }
         }
@@ -37,7 +39,7 @@ function DeletarCategoria() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            toastAlerta('Você precisa estar logado', 'erro')
             navigate('/login')
         }
     }, [token])
@@ -58,10 +60,10 @@ function DeletarCategoria() {
                 }
             })
 
-            alert('Tema apagado com sucesso')
+            toastAlerta('Tema apagado com sucesso','sucesso')
 
         } catch (error) {
-            alert('Erro ao apagar o Tema')
+            toastAlerta('Erro ao apagar o Tema','erro')
         }
 
         setIsLoading(false)
@@ -69,7 +71,7 @@ function DeletarCategoria() {
     }
 
     function retornar() {
-        navigate("/categories")
+        navigate("/categorias")
     }
     return (
         <div className='container w-1/3 mx-auto'>
@@ -106,7 +108,9 @@ function DeletarCategoria() {
                                 width="24"
                                 visible={true}
                             /> :
+                            
                             <span>Sim</span>
+                            
                         }
                     </button>
 
