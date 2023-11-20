@@ -59,7 +59,7 @@ function Cadastro() {
       setIsLoading(true);
 
       try {
-        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
+        await cadastrarUsuario(`/users/sign-up`, usuario, setUsuario);
         toastAlerta("Usuário cadastrado com sucesso", "sucesso");
       } catch (error) {
         toastAlerta("Erro ao cadastrar o Usuário", "erro");
