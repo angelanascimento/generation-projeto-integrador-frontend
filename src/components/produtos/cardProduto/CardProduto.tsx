@@ -26,6 +26,7 @@ function CardProduto({ post }: CardProdutoProps) {
           <h4 className="text-lg font-semibold uppercase">{post.name}</h4>
           <p>{post.description}</p>
           <p>Tema: {post.category?.description}</p>
+          <p>Preço: {post.price}</p>
           <p>
             Data:{" "}
             {new Intl.DateTimeFormat(undefined, {
