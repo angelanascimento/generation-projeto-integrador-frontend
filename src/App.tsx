@@ -14,8 +14,9 @@ import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCa
 import ListaProduto from "./components/produtos/listaProduto/ListaProduto";
 import "react-toastify/dist/ReactToastify.css";
 import DeletarProduto from "./components/produtos/deletarProdutos/DeletarProduto";
-import FormularioProduto from './components/produtos/formularioProduto/FormularioProduto'
+import FormularioProduto from "./components/produtos/formularioProduto/FormularioProduto";
 import Perfil from "./pages/perfil/Perfil";
+import "./App.scss";
 
 function App() {
   return (
