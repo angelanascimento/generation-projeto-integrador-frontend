@@ -152,7 +152,7 @@ function FormularioPostagem() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="description">Descrição da Postagem</label>
+                    <label htmlFor="description">Descrição do Produto</label>
 
                     <input
                         value={produto.description}
@@ -177,7 +177,18 @@ function FormularioPostagem() {
                         className="border-2 border-slate-700 rounded p-2"
                     />
                 </div>
-
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="img_url">Imagem</label>
+                    <input
+                        value={produto.img_url}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        type="text"
+                        placeholder="Insira aqui a URL da imagem"
+                        name="img_url"
+                        required
+                        className="border-2 border-slate-700 rounded p-2"
+                    />
+                </div>
                 <div className="flex flex-col gap-2">
                     <p>Categoria do Produto</p>
                     <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded'
