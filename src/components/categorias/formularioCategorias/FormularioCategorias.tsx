@@ -124,16 +124,7 @@ function FormularioCategorias() {
                     value={categoria.name}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                 />
-
-<input
-                    type="text"
-                    placeholder="Nome da sua categoria"
-                    name='description'
-                    className="border-2 border-slate-700 rounded p-2"
-                    value={categoria.description}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                />
-
+                
             </div>
             <div className="flex flex-col gap-2">
                 <label htmlFor="description">Descrição da Categoria</label>
