@@ -2,6 +2,7 @@ import Categoria from "./Categoria";
 import Usuario from "./Usuario";
 
 export default interface Produto {
+    
     id: number;
     name: string;
     description: string;
@@ -9,4 +10,5 @@ export default interface Produto {
     user?: Usuario | null;
     price: number;
     img_url: string;
+    data?: string | number | Date;
 }
