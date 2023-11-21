@@ -1,0 +1,17 @@
+@import "./styles/variables";
+
+:root {
+    color: $dark-grey;
+}
+
+.primaryAppButton {
+    &:hover {
+        background: $cor-destaque;
+    }
+}
+
+.appInput {
+    &:focus {
+        outline-color: $cor-destaque;
+    }
+}

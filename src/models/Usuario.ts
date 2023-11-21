@@ -1,7 +1,7 @@
 import Produto from "./Produto";
 
 export default interface Usuario {
-    id: number
+    id: number,
     cpf: string,
     cnpj: string,
     cep: string,
@@ -13,7 +13,7 @@ export default interface Usuario {
     url: string,
     type: string,
     email: string,
-    password: string,
-    created_at: string,
+    password?: string,
+    created_at?: string,
     products?: Produto | null
-}
+ }
