@@ -1,5 +1,5 @@
 export default interface UsuarioLogin {
-    id: bigint;
+    id: number;
     name: string;
     email: string;
     password: string;
