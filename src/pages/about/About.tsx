@@ -8,7 +8,7 @@ function About() {
       <main className="flex flex-col justify-center items-center w-screen">
         <div className="flex flex-col mt-16 mb-16 w-5/6 items-start justify-between xl:flex-row">
           <PhotosAbout />
-          <div className="w-full xl:w-7/12 xl:flex xl:flex-col xl:ml-20 xl:h-screen xl:justify-center">
+          <div className="w-full xl:w-7/12 xl:flex xl:flex-col xl:ml-20 xl:my-auto xl:justify-center">
             <h2 className="text-slate-900 text-center text-5xl font-bold mb-9 ">
               Sobre Nós
             </h2>
@@ -40,21 +40,21 @@ function About() {
               jornada e faça parte dessa mudança positiva!
             </p>
             <div className="w-full flex text-center justify-center">
-              <div className=" font-medium text-orange-600 w-full md:w-2/3 lg:w-1/2 xl:w-3/5">
+              <div className="font-medium text-orange-600 w-[29.5rem] md:w-[30rem]  lg:w-[30.5rem] xl:w-[31rem]">
                 <p>
                   Nossa plataforma é mais do que um canal de vendas, é uma rede
                   de colaboração e transformação social. Venha fazer parte dela!
                 </p>
                 <div className="flex justify-around mt-5">
                   <button
-                    className="bg-[#14202F] rounded-md p-3.5 w-44 md:w-52 xl:w-52  text-white hover:bg-white
-                                        hover: border-2 border-black hover:text-black transition-all"
+                    className="bg-lime-950 rounded-md p-3.5 w-44 md:w-52 xl:w-52  text-white hover:bg-white
+                                        hover: border-2 border-lime-950 hover:text-black transition-all"
                   >
                     Conheça nossos produtos
                   </button>
                   <button
-                    className="bg-[#14202F] rounded-md p-3.5 w-44 md:w-52 xl:w-52 text-white hover:bg-white
-                                        hover: border-2 border-black hover:text-black transition-all"
+                    className="bg-lime-950 rounded-md p-3.5 w-44 md:w-52 xl:w-52 text-white hover:bg-white
+                                        hover: border-2 border-lime-950 hover:text-black transition-all"
                   >
                     Conheça nossos fornecedores
                   </button>
@@ -64,9 +64,9 @@ function About() {
           </div>
         </div>
         <div className="flex items-center justify-center bg-[#F5F5F5] w-full py-2">
-          <div className="flex flex-col items-center 2xl:flex 2xl:flex-row 2xl:justify-between 2xl:w-5/6 2xl:h-[5rem]">
+          <div className="flex flex-col items-center xl:flex xl:flex-row xl:justify-between xl:w-5/6 xl:h-[5rem]">
             <Seals />
-            <hr className="w-5/6 m-2 2xl:hidden" />
+            <hr className="w-5/6 m-2 xl:hidden" />
             <PaymentMethods />
           </div>
         </div>

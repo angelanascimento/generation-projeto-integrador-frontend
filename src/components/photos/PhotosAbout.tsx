@@ -2,7 +2,7 @@ function PhotosAbout() {
 
     return(
         <div className="w-full xl:w-2/5">
-            <div className="grid grid-cols-8 grid-rows-7 gap-1.5 mb-16 xl:h-screen xl:mb-0">
+            <div className="grid grid-cols-8 grid-rows-7 gap-1.5 mb-16  xl:mb-0">
                 <img  className="rounded-xl col-start-1 col-span-4
                 row-start-1 row-span-4 h-full" src="src/assets/img/photos-about/photo-05.jpg" alt="Fotografia de uma pessoa com um cesto de palha no braço mostrando as uvas roxas colhidas" />
                 <img className="rounded-xl col-start-5 col-span-4
