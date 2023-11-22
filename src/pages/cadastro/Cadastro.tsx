@@ -25,7 +25,7 @@ function Cadastro() {
     ethnicity: "",
     born: "",
     url: "",
-    type: "admin",
+    type: "",
     email: "",
     password: "",
     created_at: ""
@@ -46,6 +46,20 @@ function Cadastro() {
   }
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  function atualizarEstadoSelect(e: ChangeEvent<HTMLSelectElement>) {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  function atualizarEstadoTextArea(e: ChangeEvent<HTMLTextAreaElement>) {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value
@@ -119,6 +133,21 @@ function Cadastro() {
         </div>
 
         <div className="flex flex-col w-full">
+          <label htmlFor="tipo">Tipo de Perfil</label>
+          <select
+            id="tipo"
+            name="type"
+            className="appInput border-2 border-cor-primaria rounded p-2"
+            value={usuario.type}
+            onChange={(e: ChangeEvent<HTMLSelectElement>) => atualizarEstadoSelect(e)}
+          > 
+            <option value="" selected disabled>selecione um perfil</option>
+            <option value="comprador">Comprador</option>
+            <option value="vendedor">Vendedor</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col w-full">
           <label htmlFor="cpf">CPF</label>
           <input
             type="text"
@@ -144,14 +173,14 @@ function Cadastro() {
         </div>
         <div className="flex flex-col w-full">
           <label htmlFor="about">Sobre</label>
-          <input
-            type="text"
+          <textarea
             id="sobre"
             name="about"
-            placeholder="Sobre"
+            rows={4}
+            cols={5}
             className="appInput border-2 border-cor-primaria rounded p-2"
             value={usuario.about}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstadoTextArea(e)}
           />
         </div>
         <div className="flex flex-col w-full">
