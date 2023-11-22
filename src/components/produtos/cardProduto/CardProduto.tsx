@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Produto from "../../../models/Produto";
+import { currencyFormat } from "../../../utils/currencyFormat";
+import dateFormat from "../../../utils/dateFormat";
 
 interface CardProdutoProps {
   post: Produto;
@@ -14,39 +16,49 @@ function CardProduto({ post }: CardProdutoProps) {
       <div>
         <div className="flex w-full items-center gap-4">
           <img
-          src="https://hortifrutirecife.com.br/image/cache/catalog/produtos/REPOLHO%20ROXO-1000x1000.png"
+            src="https://hortifrutirecife.com.br/image/cache/catalog/produtos/REPOLHO%20ROXO-1000x1000.png"
             //src={post.img_url}
             className="w-full h-full border-transparent rounded-lg"
             alt="Imagem do Produto"
           />
         </div>
         <div className="flex flex-col px-2 py-4">
+          <h4 className="text-lg font-semibold uppercase h-[3.5rem] line-clamp-2">
+            {post.name}
+          </h4>
 
-          <h4 className="text-lg font-semibold uppercase h-[3.5rem] line-clamp-2">{post.name}</h4>
-            
           <div className="flex mt-2 justify-between">
-            <div className="w-[7rem] font-semibold">
-              <h3>Vendedor:</h3>
-              <h3>Categoria:</h3>
-              <h3>Descrição: </h3>
-              <h3>Preço: </h3>
-              <h3>Data: </h3>
-            </div>
-            <div className="w-full">
-              <p>{post.user?.name}</p>
-              <p>{post.category?.description}</p>
-              <p className="line-clamp-4">{post.description}</p>
-              <p className="line-clamp-1">{post.price}</p>
-              <p>{" "}
-              {new Intl.DateTimeFormat(undefined, {
-                dateStyle: "full",
-                timeStyle: "medium"
-              }).format(new Date())}
-              </p>
-            </div>
+            <ul className="w-fit font-semibold">
+              <li className="flex gap-0.5">
+                <h3>Vendedor:</h3>
+                <span className="font-normal">{post.user?.name}</span>
+              </li>
+              <li className="flex gap-0.5">
+                <h3>Categoria:</h3>
+                <span className="font-normal">
+                  {post.category?.description}
+                </span>
+              </li>
+              <li className="flex gap-0.5">
+                <h3>Descrição:</h3>
+                <span className="line-clamp-1 font-normal">
+                  {post.description}
+                </span>
+              </li>
+              <li className="flex gap-0.5">
+                <h3>Data:</h3>
+                <span className="font-normal">{dateFormat(new Date())}</span>
+              </li>
+
+              <li className="flex gap-0.5 items-baseline">
+                <h3>Preço:</h3>
+                <span className="text-2xl text-cor-primaria">
+                  {currencyFormat.format(post.price)}
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
-
       </div>
       <div className="flex">
         <Link
