@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Produto from "../../../models/Produto";
 import { currencyFormat } from "../../../utils/currencyFormat";
 import dateFormat from "../../../utils/dateFormat";
+import defaultProductImage from "../../../assets/img/product-default-image/fruit-696169_1280.jpg";
 
 interface CardProdutoProps {
   post: Produto;
@@ -14,11 +15,10 @@ function CardProduto({ post }: CardProdutoProps) {
             flex flex-col rounded-lg overflow-hidden justify-between p-3 bg-slate-50"
     >
       <div>
-        <div className="flex w-full items-center gap-4">
+        <div className="flex w-full h-[10rem] items-center gap-4">
           <img
-            src="https://hortifrutirecife.com.br/image/cache/catalog/produtos/REPOLHO%20ROXO-1000x1000.png"
-            //src={post.img_url}
-            className="w-full h-full border-transparent rounded-lg"
+            src={post.image_url ? post.image_url : defaultProductImage}
+            className="w-full h-full object-cover border-transparent rounded-lg"
             alt="Imagem do Produto"
           />
         </div>
