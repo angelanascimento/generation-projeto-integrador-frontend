@@ -40,26 +40,17 @@ function Navbar() {
             <Link to="/about" className="hover:underline">
               Sobre nós
             </Link>
-            <Link to="/cadastro" className="hover:underline">
-              Cadastro
-            </Link>
             <Link to="/produtos" className="hover:underline">
               Produtos
             </Link>
             <Link to="/categorias" className="hover:underline">
               Categorias
             </Link>
-            <Link to="/cadastroCategorias" className="hover:underline">
-              Cadastrar Categoria
-            </Link>
             <Link to="/contatos" className="hover:underline">
               Contatos
             </Link>
             <Link to="/perfil" className="hover:underline">
               Perfil
-            </Link>
-            <Link to="/login" className="hover:underline">
-              Login
             </Link>
             <Link to="" onClick={logout} className="hover:underline">
               Sair{" "}
