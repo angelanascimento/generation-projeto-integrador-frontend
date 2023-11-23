@@ -2,6 +2,7 @@ import Seals from "../../components/seals/Seals";
 import PhotosAbout from "../../components/photos/PhotosAbout";
 import PaymentMethods from "../../components/payment-methods/PaymentMethods";
 
+
 function About() {
   return (
     <>
