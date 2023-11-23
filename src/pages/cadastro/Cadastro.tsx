@@ -88,13 +88,13 @@ function Cadastro() {
   }
 
   return (
-    <div className="flex flex-row xl:h-screen ">
-      <div className="hidden md:flex md:w-[95%] lg:w-[90%] xl:w-[60%]">
-        <img src="src/assets/img/photos-about/mikhail-nilov.jpg" className="w-full" />
+    <div className="grid grid-cols-1 h-screen lg:grid-cols-5 xl:grid-cols-5 ">
+      <div className="hidden lg:flex lg:w-full xl:w-full lg:col-span-2 lg:col-start-1 xl:col-span-2 xl:col-start-1">
+        <img src="src/assets/img/photos-about/mikhail-nilov.jpg" className="" />
       </div>
-      <div className="w-full h-full flex justify-center">
+      <div className="w-full h-full flex justify-center lg:col-span-3 lg:col-start-3 xl:col-span-3 xl:col-start-3">
         <form
-          className="flex flex-col justify-center w-full p-[2rem] gap-2 items-center font-bold md:w-[90%] lg:w-[90%] xl:w-[75%] "
+          className="flex flex-col justify-center w-full p-[2rem] gap-2 items-center font-bold md:w-[90%] lg:w-[90%] xl:w-[80%]  "
           onSubmit={cadastrarNovoUsuario}
         >
           <h2 className="text-slate-900 text-5xl">Cadastrar</h2>
@@ -110,7 +110,7 @@ function Cadastro() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
-          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap">
+          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap gap-2">
             <div className="flex flex-col w-full xl:w-[65.5%]">
                 <label htmlFor="endereco">Endereço</label>
                 <input
@@ -136,7 +136,7 @@ function Cadastro() {
               </div>
           </div>
           
-          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap">
+          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap gap-2">
           <div className="flex flex-col w-full xl:w-[31%]">
               <label htmlFor="tipo">Tipo de Perfil</label>
               <select
@@ -215,7 +215,7 @@ function Cadastro() {
             />
             <p className="text-lime-700 text-base ">No máximo 1000 caracteres</p>
           </div>
-          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap">
+          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap gap-2">
             <div className="flex flex-col w-full xl:w-[48%]">
               <label htmlFor="senha">Senha</label>
               <input
