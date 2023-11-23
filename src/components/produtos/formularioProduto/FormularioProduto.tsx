@@ -7,6 +7,8 @@ import { AuthContext } from "../../../contexts/AuthContext";
 
 import Categoria from "../../../models/Categoria";
 import Produto from "../../../models/Produto";
+import { toastAlerta } from "../../../utils/toastAlerta";
+import Usuario from "../../../models/Usuario";
 
 function FormularioPostagem() {
   const navigate = useNavigate();
@@ -20,6 +22,7 @@ function FormularioPostagem() {
     description: ""
   });
   const [produto, setProduto] = useState<Produto>({} as Produto);
+  const [userFullData, setUserFullData] = useState<Usuario>({} as Usuario);
 
   const { id } = useParams<{ id: string }>();
 
@@ -52,7 +55,7 @@ function FormularioPostagem() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      toastAlerta("Você precisa estar logado", "erro");
       navigate("/");
     }
   }, [token]);
@@ -72,12 +75,18 @@ function FormularioPostagem() {
     });
   }, [categoria]);
 
+  useEffect(() => {
+    buscar(`/users/${usuario.id}`, setUserFullData, {
+      Authorization: usuario.token
+    });
+  }, [usuario]);
+
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setProduto({
       ...produto,
       [e.target.name]: e.target.value,
       category: categoria,
-      user: usuario
+      user: userFullData
     });
   }
 
@@ -97,13 +106,13 @@ function FormularioPostagem() {
           }
         });
 
-        alert("Produto atualizado com sucesso");
+        toastAlerta("Produto atualizado com sucesso", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
-          alert("O token expirou, favor logar novamente");
+          toastAlerta("O token expirou, favor logar novamente", "erro");
           handleLogout();
         } else {
-          alert("Erro ao atualizar o Produto");
+          toastAlerta("Erro ao atualizar o Produto", "erro");
         }
       }
     } else {
@@ -114,13 +123,13 @@ function FormularioPostagem() {
           }
         });
 
-        alert("Produto cadastrado com sucesso");
+        toastAlerta("Produto cadastrado com sucesso", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
-          alert("O token expirou, favor logar novamente");
+          toastAlerta("O token expirou, favor logar novamente", "erro");
           handleLogout();
         } else {
-          alert("Erro ao cadastrar o Produto");
+          toastAlerta("Erro ao atualizar a Categoria", "erro");
         }
       }
     }
@@ -132,7 +141,7 @@ function FormularioPostagem() {
   const carregandoCategoria = categoria.description === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
+    <div className="container flex flex-col mx-auto mb-8 items-center">
       <h1 className="text-4xl text-center my-8">
         {id !== undefined ? "Editar Produto" : "Cadastrar Produto"}
       </h1>
@@ -141,13 +150,14 @@ function FormularioPostagem() {
         <div className="flex flex-col gap-2">
           <label htmlFor="titulo">Título do Produto</label>
           <input
+            id="titulo"
             value={produto.name}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
             placeholder="Insira aqui o Título"
             name="name"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="appInput border-2 border-cor-primaria rounded p-2"
           />
         </div>
 
@@ -155,46 +165,49 @@ function FormularioPostagem() {
           <label htmlFor="description">Descrição do Produto</label>
 
           <input
+            id="description"
             value={produto.description}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
             placeholder="Adicione aqui a Descrição do Produto"
             name="description"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="appInput border-2 border-cor-primaria rounded p-2"
           />
         </div>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="price">Preço</label>
           <input
+            id="price"
             value={produto.price}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
             placeholder="Insira aqui o Preço do Produto"
             name="price"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="appInput border-2 border-cor-primaria rounded p-2"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="img_url">Imagem</label>
+          <label htmlFor="image_url">Imagem</label>
           <input
+            id="image_url"
             value={produto.image_url}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
             placeholder="Insira aqui a URL da imagem"
-            name="img_url"
+            name="image_url"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="appInput border-2 border-cor-primaria rounded p-2"
           />
         </div>
         <div className="flex flex-col gap-2">
-          <p>Categoria do Produto</p>
+          <label htmlFor="categoria">Categoria do Produto</label>
           <select
             name="categoria"
             id="categoria"
-            className="border p-2 border-slate-800 rounded"
+            className="appInput border-2 border-cor-primaria rounded p-2"
             onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
           >
             <option value="" selected disabled>
@@ -222,7 +235,7 @@ function FormularioPostagem() {
               visible={true}
             />
           ) : (
-            <span>Confirmar</span>
+            <span>Cadastrar Produto</span>
           )}
         </button>
       </form>

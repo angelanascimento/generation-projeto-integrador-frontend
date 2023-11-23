@@ -13,6 +13,7 @@ function Cadastro() {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
+  const [accountType, setAccountType] = useState<string>("PF");
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
@@ -52,6 +53,17 @@ function Cadastro() {
     });
   }
 
+  useEffect(() => {
+    setDefaultCNPJ();
+  }, []);
+
+  function setDefaultCNPJ() {
+    setUsuario({ ...usuario, cpf: "", cnpj: "80358675000146" });
+  }
+  function setDefaultCPF() {
+    setUsuario({ ...usuario, cpf: "47956912075", cnpj: "" });
+  }
+
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -59,6 +71,7 @@ function Cadastro() {
       setIsLoading(true);
 
       try {
+        console.log(usuario);
         await cadastrarUsuario(`/users/sign-up`, usuario, setUsuario);
         toastAlerta("Usuário cadastrado com sucesso", "sucesso");
       } catch (error) {
@@ -99,7 +112,7 @@ function Cadastro() {
             type="text"
             id="usuario"
             name="email"
-            placeholder="exemplo@gmai.com"
+            placeholder="exemplo@email.com"
             className="appInput border-2 border-cor-primaria rounded p-2"
             value={usuario.email}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -111,7 +124,7 @@ function Cadastro() {
             type="text"
             id="cep"
             name="cep"
-            placeholder="Cep"
+            placeholder="CEP"
             className="appInput border-2 border-cor-primaria rounded p-2"
             value={usuario.cep}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -119,30 +132,75 @@ function Cadastro() {
         </div>
 
         <div className="flex flex-col w-full">
-          <label htmlFor="cpf">CPF</label>
-          <input
-            type="text"
-            id="cpf"
-            name="cpf"
-            placeholder="Cpf"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.cpf}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+          {accountType === "PF" ? (
+            <div className="flex flex-col w-full">
+              <label htmlFor="cpf">CPF</label>
+              <input
+                type="text"
+                id="cpf"
+                name="cpf"
+                placeholder="CPF"
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                value={usuario.cpf}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  atualizarEstado(e)
+                }
+              />
+            </div>
+          ) : (
+            <div className="flex flex-col w-full">
+              <label htmlFor="cnpj">CNPJ</label>
+              <input
+                type="text"
+                id="cnpj"
+                name="cnpj"
+                placeholder="CNPJ"
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                value={usuario.cnpj}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  atualizarEstado(e)
+                }
+              />
+            </div>
+          )}
+          <div className="flex gap-6">
+            <label
+              htmlFor="PF"
+              className="cursor-pointer flex gap-1 items-center space-x-2"
+            >
+              <input
+                type="radio"
+                className="accountTypeRadio"
+                value={"PF"}
+                defaultChecked
+                name="contaType"
+                id="PF"
+                onClick={(e) => {
+                  setDefaultCNPJ();
+                  setAccountType(e.currentTarget.value);
+                }}
+              />
+              Pessoa Física
+            </label>
+
+            <label className="cursor-pointer flex gap-1 items-center space-x-2">
+              <input
+                type="radio"
+                className="accountTypeRadio"
+                value={"PJ"}
+                name="contaType"
+                id="PJ"
+                onClick={(e) => {
+                  setDefaultCPF();
+                  setAccountType(e.currentTarget.value);
+                }}
+              />
+              Pessoa Jurídica
+            </label>
+          </div>
         </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="cnpj">CNPJ</label>
-          <input
-            type="text"
-            id="cnpj"
-            name="cnpj"
-            placeholder="Cnpf"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.cnpj}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
+
+        {/* <div className="flex flex-col w-full">
           <label htmlFor="about">Sobre</label>
           <input
             type="text"
@@ -177,7 +235,7 @@ function Cadastro() {
             value={usuario.ethnicity}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
-        </div>
+        </div> */}
         <div className="flex flex-col w-full">
           <label htmlFor="foto">Foto</label>
           <input

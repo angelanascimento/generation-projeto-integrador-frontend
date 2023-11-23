@@ -28,7 +28,7 @@ function FormularioCategorias() {
       });
     } catch (error: any) {
       if (error.toString().includes("403")) {
-        toastAlerta("O token expirou, favor logar novamente",'erro');
+        toastAlerta("O token expirou, favor logar novamente", "erro");
         handleLogout();
       }
     }
@@ -36,7 +36,7 @@ function FormularioCategorias() {
 
   useEffect(() => {
     if (token === "") {
-      toastAlerta("Você precisa estar logado",'erro');
+      toastAlerta("Você precisa estar logado", "erro");
       navigate("/login");
     }
   }, [token]);
@@ -66,13 +66,13 @@ function FormularioCategorias() {
           }
         });
 
-        toastAlerta("Categoria atualizada com sucesso",'sucesso');
+        toastAlerta("Categoria atualizada com sucesso", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
-          toastAlerta("O token expirou, favor logar novamente",'erro');
+          toastAlerta("O token expirou, favor logar novamente", "erro");
           handleLogout();
         } else {
-          toastAlerta("Erro ao atualizar a Categoria",'erro');
+          toastAlerta("Erro ao atualizar a Categoria", "erro");
         }
       }
     } else {
@@ -83,13 +83,13 @@ function FormularioCategorias() {
           }
         });
 
-        toastAlerta("Categoria cadastrada com sucesso",'sucesso');
+        toastAlerta("Categoria cadastrada com sucesso", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
-          toastAlerta("O token expirou, favor logar novamente",'erro');
+          toastAlerta("O token expirou, favor logar novamente", "erro");
           handleLogout();
         } else {
-          toastAlerta("Erro ao cadastrar a Categoria",'erro');
+          toastAlerta("Erro ao cadastrar a Categoria", "erro");
         }
       }
     }
@@ -112,26 +112,28 @@ function FormularioCategorias() {
         <div className="flex flex-col gap-2">
           <label htmlFor="nome">Nome da Categoria</label>
           <input
+            id="nome"
             type="text"
             placeholder="Nome da sua categoria"
             name="name"
-            className="border-2 border-slate-700 rounded p-2"
+            className="appInput border-2 border-cor-primaria rounded p-2"
             value={categoria.name}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
-
+          <label htmlFor="description">Descrição Categoria</label>
           <input
+            id="description"
             type="text"
             placeholder="Nome da sua categoria"
             name="description"
-            className="border-2 border-slate-700 rounded p-2"
+            className="appInput border-2 border-cor-primaria rounded p-2"
             value={categoria.description}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
         <button
-          className="rounded text-slate-100 bg-indigo-400 
-                hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+          className="self-center primaryAppButton bg-green rounded flex justify-center
+    text-white w-1/2 py-2"
           type="submit"
         >
           {isLoading ? (
