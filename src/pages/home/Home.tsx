@@ -9,7 +9,7 @@ function Home() {
       <div className="bg-emerald-400 flex justify-center">
         <div className="container grid grid-cols-2 text-white">
           <div className="flex flex-col gap-4 items-center justify-center py-4">
-            <h2 className="text-5xl font-bold">Seja Bem Vinde!</h2>
+            <h2 className="text-5xl font-bold">Seja Bem Vindo!</h2>
             <p className="text-xl">Cadastre novos produtos</p>
 
             <div className="flex justify-around gap-4">

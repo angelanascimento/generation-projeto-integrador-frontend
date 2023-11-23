@@ -20,7 +20,7 @@ export const AuthContext = createContext({} as AuthContextProps)
 export function AuthProvider({ children }: AuthProviderProps) {
 
     const [usuario, setUsuario] = useState<UsuarioLogin>({
-        id: 0n,
+        id: 0,
         name: "",
         email: "",
         password: "",
@@ -46,7 +46,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     function handleLogout() {
         setUsuario({
-            id: 0n,
+            id: 0,
             name: "",
             email: "",
             password: "",

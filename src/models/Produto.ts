@@ -5,8 +5,8 @@ export default interface Produto {
   id: number;
   name: string;
   description: string;
-  category?: Categoria | null;
-  user?: Usuario | null;
+  category: Categoria;
+  user: Usuario;
   price: number;
   image_url: string;
   data?: string | number | Date;

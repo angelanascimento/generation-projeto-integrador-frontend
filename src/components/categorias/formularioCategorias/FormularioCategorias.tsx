@@ -122,7 +122,7 @@ function FormularioCategorias() {
 
           <input
             type="text"
-            placeholder="Nome da sua categoria"
+            placeholder="Descrição da sua categoria"
             name="description"
             className="border-2 border-slate-700 rounded p-2"
             value={categoria.description}
