@@ -47,7 +47,11 @@ function ListaProduto() {
 
     return (
         <>
-            {produto.length === 0 && (
+            
+            <main className='flex flex-col items-center pt-10 pb-14 '>
+                <h2 className='w-5/6 text-2xl font-bold uppercase py-4'>Lista de Produtos Cadastrados</h2>
+
+                {produto.length === 0 && (
                 <Dna
                     visible={true}
                     height="200"
@@ -56,16 +60,17 @@ function ListaProduto() {
                     wrapperStyle={{}}
                     wrapperClass="dna-wrapper mx-auto"
                 />
-            )}
+                )}
+                <div className='w-5/6 mx-auto my-4 
+                grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
 
-            <div className='container mx-auto my-4 
-            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                    {produto.map((produtos) => (
+                        <CardProduto key={produtos.id} post={produtos} />
+                    ))}
 
-                {produto.map((produtos) => (
-                    <CardProduto key={produtos.id} post={produtos} />
-                ))}
-
-            </div>
+                </div>
+            </main>
+            
         </>
     );
 }
