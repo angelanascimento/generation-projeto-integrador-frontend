@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
+import ImagemdeFundo from "../../assets/img/photos-about/mikhail-nilov.jpg";
 
 import { cadastrarUsuario } from "../../services/Service";
 import Usuario from "../../models/Usuario";
@@ -90,7 +91,7 @@ function Cadastro() {
   return (
     <div className="grid grid-cols-1 h-screen lg:grid-cols-5 xl:grid-cols-5 ">
       <div className="hidden lg:flex lg:w-full xl:w-full lg:col-span-2 lg:col-start-1 xl:col-span-2 xl:col-start-1">
-        <img src="src/assets/img/photos-about/mikhail-nilov.jpg" className="" />
+        <img src={ImagemdeFundo}/>
       </div>
       <div className="w-full h-full flex justify-center lg:col-span-3 lg:col-start-3 xl:col-span-3 xl:col-start-3">
         <form
