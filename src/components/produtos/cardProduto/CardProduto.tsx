@@ -17,7 +17,7 @@ function CardProduto({ post }: CardProdutoProps) {
       <div>
         <div className="flex w-full h-[10rem] items-center gap-4">
           <img
-            src={post.image_url ? post.image_url : defaultProductImage}
+            src={post.image_url? post.image_url : defaultProductImage}
             className="w-full h-full object-cover border-transparent rounded-lg"
             alt="Imagem do Produto"
           />
