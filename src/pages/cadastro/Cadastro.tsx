@@ -25,7 +25,7 @@ function Cadastro() {
     ethnicity: "",
     born: "",
     url: "",
-    type: "admin",
+    type: "",
     email: "",
     password: "",
     created_at: ""
@@ -46,6 +46,20 @@ function Cadastro() {
   }
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  function atualizarEstadoSelect(e: ChangeEvent<HTMLSelectElement>) {
+    setUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  function atualizarEstadoTextArea(e: ChangeEvent<HTMLTextAreaElement>) {
     setUsuario({
       ...usuario,
       [e.target.name]: e.target.value
@@ -74,174 +88,211 @@ function Cadastro() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center font-bold">
-      <div className="fundoCadastro hidden lg:block h-full"></div>
-      <form
-        className="cadastroContainer flex justify-center items-center flex-col w-2/3 gap-3"
-        onSubmit={cadastrarNovoUsuario}
-      >
-        <h2 className="text-slate-900 text-5xl">Cadastrar</h2>
-        <div className="flex flex-col w-full">
-          <label htmlFor="nome">Nome</label>
-          <input
-            type="text"
-            id="nome"
-            name="name"
-            placeholder="Nome"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.name}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="usuario">Usuario</label>
-          <input
-            type="text"
-            id="usuario"
-            name="email"
-            placeholder="exemplo@gmai.com"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.email}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="cep">CEP</label>
-          <input
-            type="text"
-            id="cep"
-            name="cep"
-            placeholder="Cep"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.cep}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
+    <div className="flex flex-row xl:h-screen ">
+      <div className="hidden md:flex md:w-[95%] lg:w-[90%] xl:w-[60%]">
+        <img src="src/assets/img/photos-about/mikhail-nilov.jpg" className="w-full" />
+      </div>
+      <div className="w-full h-full flex justify-center">
+        <form
+          className="flex flex-col justify-center w-full p-[2rem] gap-2 items-center font-bold md:w-[90%] lg:w-[90%] xl:w-[75%] "
+          onSubmit={cadastrarNovoUsuario}
+        >
+          <h2 className="text-slate-900 text-5xl">Cadastrar</h2>
+          <div className="flex flex-col w-full">
+            <label htmlFor="nome">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              name="name"
+              required
+              className="appInput border-2 border-cor-primaria rounded p-2 "
+              value={usuario.name}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap">
+            <div className="flex flex-col w-full xl:w-[65.5%]">
+                <label htmlFor="endereco">Endereço</label>
+                <input
+                  type="text"
+                  id="endereco"
+                  name="address"
+                  className="appInput border-2 border-cor-primaria rounded p-2"
+                  //value={usuario.cep}
+                  //onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+              </div>
+              <div className="flex flex-col w-full xl:w-[31%]">
+                <label htmlFor="cep">CEP</label>
+                <input
+                  type="text"
+                  id="cep"
+                  name="cep"
+                  required
+                  className="appInput border-2 border-cor-primaria rounded p-2"
+                  value={usuario.cep}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                />
+              </div>
+          </div>
+          
+          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap">
+          <div className="flex flex-col w-full xl:w-[31%]">
+              <label htmlFor="tipo">Tipo de Perfil</label>
+              <select
+                id="tipo"
+                name="type"
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                value={usuario.type}
+                onChange={(e: ChangeEvent<HTMLSelectElement>) => atualizarEstadoSelect(e)}
+              > 
+                <option value="" selected disabled>selecione um perfil</option>
+                <option value="comprador">Comprador</option>
+                <option value="vendedor">Vendedor</option>
+              </select>
+            </div>
 
-        <div className="flex flex-col w-full">
-          <label htmlFor="cpf">CPF</label>
-          <input
-            type="text"
-            id="cpf"
-            name="cpf"
-            placeholder="Cpf"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.cpf}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="cnpj">CNPJ</label>
-          <input
-            type="text"
-            id="cnpj"
-            name="cnpj"
-            placeholder="Cnpf"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.cnpj}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="about">Sobre</label>
-          <input
-            type="text"
-            id="sobre"
-            name="about"
-            placeholder="Sobre"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.about}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="genero">Gênero</label>
-          <input
-            type="text"
-            id="genero"
-            name="gender"
-            placeholder="Gender"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.gender}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="etnia">Etnia</label>
-          <input
-            type="text"
-            id="etnia"
-            name="ethnicity"
-            placeholder="Ethnicity"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.ethnicity}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="foto">Foto</label>
-          <input
-            type="text"
-            id="foto"
-            name="url"
-            placeholder="Foto"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.url}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="senha">Senha</label>
-          <input
-            type="password"
-            id="senha"
-            name="password"
-            placeholder="Senha"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={usuario.password}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col w-full">
-          <label htmlFor="confirmarSenha">Confirmar Senha</label>
-          <input
-            type="password"
-            id="confirmarSenha"
-            name="confirmarSenha"
-            placeholder="Confirmar Senha"
-            className="appInput border-2 border-cor-primaria rounded p-2"
-            value={confirmaSenha}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              handleConfirmarSenha(e)
-            }
-          />
-        </div>
-        <div className="flex justify-around w-full gap-8">
-          <button
-            className="rounded bg-app-red text-white hover:bg-red-600 w-1/2 py-2"
-            onClick={retornar}
-          >
-            Cancelar
-          </button>
-          <button
-            className="primaryAppButton bg-green rounded flex justify-center
-                    text-white w-1/2 py-2"
-            type="submit"
-          >
-            {isLoading ? (
-              <RotatingLines
-                strokeColor="white"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="24"
-                visible={true}
+            <div className="flex flex-col w-full xl:w-[31%]">
+              <label htmlFor="cpf">CPF</label>
+              <input
+                type="text"
+                id="cpf"
+                name="cpf"
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                value={usuario.cpf}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
-            ) : (
-              <span>Cadastrar</span>
-            )}
-          </button>
-        </div>
-      </form>
+            </div>
+            <div className="flex flex-col w-full xl:w-[31%]">
+              <label htmlFor="cnpj">CNPJ</label>
+              <input
+                type="text"
+                id="cnpj"
+                name="cnpj"
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                value={usuario.cnpj}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              />
+            </div>
+
+          </div>
+
+          <div className="flex flex-col w-full">
+            <label htmlFor="usuario">E-mail</label>
+            <input
+              type="text"
+              id="usuario"
+              name="email"
+              required
+              placeholder="exemplo@gmail.com.br"
+              className="appInput border-2 border-cor-primaria rounded p-2"
+              value={usuario.email}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+          <div className="flex flex-col w-full">
+            <label htmlFor="foto">Foto</label>
+            <input
+              type="text"
+              id="foto"
+              name="url"
+              placeholder="URL da foto"
+              className="appInput border-2 border-cor-primaria rounded p-2"
+              value={usuario.url}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+          <div className="flex flex-col w-full">
+            <label htmlFor="about">Sobre</label>
+            <textarea
+              id="sobre"
+              name="about"
+              rows={3}
+              cols={5}
+              className="appInput border-2 border-cor-primaria rounded p-2"
+              value={usuario.about}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstadoTextArea(e)}
+            />
+            <p className="text-lime-700 text-base ">No máximo 1000 caracteres</p>
+          </div>
+          <div className="flex flex-wrap w-full justify-between xl:flex-nowrap">
+            <div className="flex flex-col w-full xl:w-[48%]">
+              <label htmlFor="senha">Senha</label>
+              <input
+                type="password"
+                id="senha"
+                name="password"
+                required
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                value={usuario.password}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              />
+            </div>
+              <div className="flex flex-col w-full xl:w-[48%]">
+                <label htmlFor="confirmarSenha">Confirmar Senha</label>
+                <input
+                  type="password"
+                  id="confirmarSenha"
+                  name="confirmarSenha"
+                  required
+                  className="appInput border-2 border-cor-primaria rounded p-2"
+                  value={confirmaSenha}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    handleConfirmarSenha(e)
+                  }
+                />
+              </div>
+          </div>
+
+          <div className="w-full my-4">
+            <div>
+              <input 
+              type="checkbox"
+              id="newsletter"
+              name="newsletter"
+              />
+              <label htmlFor="newsletter" className="ml-2 ">Receber novidades, informações e ofertas</label>
+            </div>
+            <div>
+            <input 
+              type="checkbox"
+              id="newsletter"
+              name="newsletter"
+              />
+              <label htmlFor="newsletter" className="ml-2">
+              Eu li e concordo com esses <a href="https://drive.google.com/file/d/18C16W0i3gQE_C6z1ctQzAQ_JzhT7A-Jf/view?usp=sharing" target="_blank" className="underline text-lime-700">termos e condições</a>
+              </label>
+            </div>
+          </div>
+
+          <div className="flex justify-around w-full gap-8">
+            <button
+              className="rounded bg-app-red text-white hover:bg-red-600 w-1/2 py-2"
+              onClick={retornar}
+            >
+              Cancelar
+            </button>
+            <button
+              className="primaryAppButton bg-green rounded flex justify-center
+                      text-white w-1/2 py-2"
+              type="submit"
+            >
+              {isLoading ? (
+                <RotatingLines
+                  strokeColor="white"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  width="24"
+                  visible={true}
+                />
+              ) : (
+                <span>Cadastrar</span>
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
+      
     </div>
   );
 }
