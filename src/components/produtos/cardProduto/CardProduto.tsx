@@ -36,7 +36,7 @@ function CardProduto({ post }: CardProdutoProps) {
               <li className="flex gap-0.5">
                 <h3>Categoria:</h3>
                 <span className="line-clamp-1 font-normal pl-2">
-                  {post.name}
+                  {post.category?.name}
                 </span>
               </li>
               <li className="flex gap-0.5">
