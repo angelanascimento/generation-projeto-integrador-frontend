@@ -60,6 +60,22 @@ function Cadastro() {
     });
   }
 
+  useEffect(() => {
+    setDefaultCNPJ();
+  }, []);
+
+  useEffect(() => {
+    if (usuario.type === "Vendedor") setDefaultCPF();
+    else setDefaultCNPJ();
+  }, [usuario.type]);
+
+  function setDefaultCNPJ() {
+    setUsuario({ ...usuario, cpf: "", cnpj: "80358675000146" });
+  }
+  function setDefaultCPF() {
+    setUsuario({ ...usuario, cpf: "47956912075", cnpj: "" });
+  }
+
   function atualizarEstadoTextArea(e: ChangeEvent<HTMLTextAreaElement>) {
     setUsuario({
       ...usuario,
@@ -91,7 +107,7 @@ function Cadastro() {
   return (
     <div className="grid grid-cols-1 h-screen lg:grid-cols-5 xl:grid-cols-5 ">
       <div className="hidden lg:flex lg:w-full xl:w-full lg:col-span-2 lg:col-start-1 xl:col-span-2 xl:col-start-1">
-        <img src={ImagemdeFundo}/>
+        <img src={ImagemdeFundo} />
       </div>
       <div className="w-full h-full flex justify-center lg:col-span-3 lg:col-start-3 xl:col-span-3 xl:col-start-3">
         <form
@@ -108,75 +124,95 @@ function Cadastro() {
               required
               className="appInput border-2 border-cor-primaria rounded p-2 "
               value={usuario.name}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
             />
           </div>
           <div className="flex flex-wrap w-full justify-between xl:flex-nowrap gap-2">
             <div className="flex flex-col w-full xl:w-[65.5%]">
-                <label htmlFor="endereco">Endereço</label>
-                <input
-                  type="text"
-                  id="endereco"
-                  name="address"
-                  className="appInput border-2 border-cor-primaria rounded p-2"
-                  //value={usuario.cep}
-                  //onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                />
-              </div>
-              <div className="flex flex-col w-full xl:w-[31%]">
-                <label htmlFor="cep">CEP</label>
-                <input
-                  type="text"
-                  id="cep"
-                  name="cep"
-                  required
-                  className="appInput border-2 border-cor-primaria rounded p-2"
-                  value={usuario.cep}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                />
-              </div>
+              <label htmlFor="endereco">Endereço</label>
+              <input
+                type="text"
+                id="endereco"
+                name="address"
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                //value={usuario.cep}
+                //onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              />
+            </div>
+            <div className="flex flex-col w-full xl:w-[31%]">
+              <label htmlFor="cep">CEP</label>
+              <input
+                type="text"
+                id="cep"
+                name="cep"
+                required
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                value={usuario.cep}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  atualizarEstado(e)
+                }
+              />
+            </div>
           </div>
-          
+
+          {/* AQUI */}
+
           <div className="flex flex-wrap w-full justify-between xl:flex-nowrap gap-2">
-          <div className="flex flex-col w-full xl:w-[31%]">
+            <div className="flex flex-col w-full xl:w-[32%]">
               <label htmlFor="tipo">Tipo de Perfil</label>
               <select
                 id="tipo"
                 name="type"
                 className="appInput border-2 border-cor-primaria rounded p-2"
                 value={usuario.type}
-                onChange={(e: ChangeEvent<HTMLSelectElement>) => atualizarEstadoSelect(e)}
-              > 
-                <option value="" selected disabled>selecione um perfil</option>
-                <option value="comprador">Comprador</option>
-                <option value="vendedor">Vendedor</option>
+                onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+                  atualizarEstadoSelect(e)
+                }
+              >
+                <option value="" selected disabled>
+                  selecione um perfil
+                </option>
+                <option value="Comprador">Comprador</option>
+                <option value="Vendedor">Vendedor</option>
               </select>
             </div>
 
-            <div className="flex flex-col w-full xl:w-[31%]">
-              <label htmlFor="cpf">CPF</label>
-              <input
-                type="text"
-                id="cpf"
-                name="cpf"
-                className="appInput border-2 border-cor-primaria rounded p-2"
-                value={usuario.cpf}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-              />
+            <div className="flex flex-col w-full xl:w-[65%] ">
+              {usuario.type === "Vendedor" ? (
+                <>
+                  <label htmlFor="cnpj">CNPJ</label>
+                  <input
+                    type="text"
+                    id="cnpj"
+                    name="cnpj"
+                    className="appInput border-2 border-cor-primaria rounded p-2"
+                    value={usuario.cnpj}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      atualizarEstado(e)
+                    }
+                  />
+                </>
+              ) : (
+                <>
+                  <label htmlFor="cpf">CPF</label>
+                  <input
+                    type="text"
+                    id="cpf"
+                    name="cpf"
+                    className="appInput border-2 border-cor-primaria rounded p-2"
+                    value={usuario.cpf}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      atualizarEstado(e)
+                    }
+                  />
+                </>
+              )}
             </div>
-            <div className="flex flex-col w-full xl:w-[31%]">
-              <label htmlFor="cnpj">CNPJ</label>
-              <input
-                type="text"
-                id="cnpj"
-                name="cnpj"
-                className="appInput border-2 border-cor-primaria rounded p-2"
-                value={usuario.cnpj}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-              />
-            </div>
-
           </div>
+
+          {/* AQUI */}
 
           <div className="flex flex-col w-full">
             <label htmlFor="usuario">E-mail</label>
@@ -188,7 +224,9 @@ function Cadastro() {
               placeholder="exemplo@gmail.com.br"
               className="appInput border-2 border-cor-primaria rounded p-2"
               value={usuario.email}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
             />
           </div>
           <div className="flex flex-col w-full">
@@ -200,7 +238,9 @@ function Cadastro() {
               placeholder="URL da foto"
               className="appInput border-2 border-cor-primaria rounded p-2"
               value={usuario.url}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
             />
           </div>
           <div className="flex flex-col w-full">
@@ -212,9 +252,13 @@ function Cadastro() {
               cols={5}
               className="appInput border-2 border-cor-primaria rounded p-2"
               value={usuario.about}
-              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstadoTextArea(e)}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                atualizarEstadoTextArea(e)
+              }
             />
-            <p className="text-lime-700 text-base ">No máximo 1000 caracteres</p>
+            <p className="text-lime-700 text-base ">
+              No máximo 1000 caracteres
+            </p>
           </div>
           <div className="flex flex-wrap w-full justify-between xl:flex-nowrap gap-2">
             <div className="flex flex-col w-full xl:w-[48%]">
@@ -226,42 +270,45 @@ function Cadastro() {
                 required
                 className="appInput border-2 border-cor-primaria rounded p-2"
                 value={usuario.password}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  atualizarEstado(e)
+                }
               />
             </div>
-              <div className="flex flex-col w-full xl:w-[48%]">
-                <label htmlFor="confirmarSenha">Confirmar Senha</label>
-                <input
-                  type="password"
-                  id="confirmarSenha"
-                  name="confirmarSenha"
-                  required
-                  className="appInput border-2 border-cor-primaria rounded p-2"
-                  value={confirmaSenha}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    handleConfirmarSenha(e)
-                  }
-                />
-              </div>
+            <div className="flex flex-col w-full xl:w-[48%]">
+              <label htmlFor="confirmarSenha">Confirmar Senha</label>
+              <input
+                type="password"
+                id="confirmarSenha"
+                name="confirmarSenha"
+                required
+                className="appInput border-2 border-cor-primaria rounded p-2"
+                value={confirmaSenha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  handleConfirmarSenha(e)
+                }
+              />
+            </div>
           </div>
 
           <div className="w-full my-4">
             <div>
-              <input 
-              type="checkbox"
-              id="newsletter"
-              name="newsletter"
-              />
-              <label htmlFor="newsletter" className="ml-2 ">Receber novidades, informações e ofertas</label>
+              <input type="checkbox" id="newsletter" name="newsletter" />
+              <label htmlFor="newsletter" className="ml-2 ">
+                Receber novidades, informações e ofertas
+              </label>
             </div>
             <div>
-            <input 
-              type="checkbox"
-              id="newsletter"
-              name="newsletter"
-              />
+              <input type="checkbox" id="newsletter" name="newsletter" />
               <label htmlFor="newsletter" className="ml-2">
-              Eu li e concordo com esses <a href="https://drive.google.com/file/d/18C16W0i3gQE_C6z1ctQzAQ_JzhT7A-Jf/view?usp=sharing" target="_blank" className="underline text-lime-700">termos e condições</a>
+                Eu li e concordo com esses{" "}
+                <a
+                  href="https://drive.google.com/file/d/18C16W0i3gQE_C6z1ctQzAQ_JzhT7A-Jf/view?usp=sharing"
+                  target="_blank"
+                  className="underline text-lime-700"
+                >
+                  termos e condições
+                </a>
               </label>
             </div>
           </div>
@@ -293,7 +340,6 @@ function Cadastro() {
           </div>
         </form>
       </div>
-      
     </div>
   );
 }

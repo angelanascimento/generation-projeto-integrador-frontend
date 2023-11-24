@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext'
 import { ReactNode, useContext } from 'react';
 
+import LogoMenor from "../../assets/img/logos/comercio_com_causa_letreiro-mod.png"
+
+
 function Footer() {
 
 
@@ -18,9 +21,9 @@ function Footer() {
                 <footer className="flex flex-col justify-center items-center bg-[#2A332A] text-white">
                     <div className="flex flex-wrap justify-between md:mb-6 w-11/12 xl:mt-6  xl:flex-nowrap xl:w-5/6 ">
                         <div className='self-center w-full mb-4 mt-6 xl:w-1/3 xl:m-0'>
-                            <img className='py-1.5 mb-2 w-72' src={"https://lh3.googleusercontent.com/pw/ADCreHfaBbBL4iKZuUELmIQb5yQA_Zs3LFrAcHWnoKJThT5zs_d4N8fpiZ4qAsNX6AEjPezaE61XtY-R2JMdVYHmpPwmWqzogjtFLPfJ_wDdtYxqbpWbrZ5kRh2J1mmHRu16o98F3igEfNK5mpSvlt7AFFvGP10Ouc9-k_I7shuZEos2fQ_YLczTubd_f8Eh0YUCTZoHdRN5pM1x-s9XJ7czO3Jc1mAEKwQpGrbTFadEIH0K25JeFJne4uGTu11MsliqhEkcTQmlc85GTXYEAP-1I9TYqd0O4GNBivsOh52BcKN35N-7nvtIWpk-zPPtK9zcVbPq_lE13PNGWYfcCzLc-T8cJ0DaG5X-AjVPVGRwbAVm6sxPxTqi59VxoTv8nsqjorWob_PytXYJ-QQdupXsq8BxwwK60x85832ZnstoqS-W8r2CNIuIBpyBnN306V0C4uDRRd9Pj8Tdzop0tn-LhQw4jggMwYeTFOzAIkno06AvPprVR2NbJ8ZrN5bV5V9JY325v3EOKFYVol7lK7DOoYI7RK87nWYcRWnoN5Gt-CMSFaw-dd3U5tSSmkmEfCQ13fXYL78pTDji7DiJ5TOi88HOTjHV6_7G5445aYfYx1jSdkZObZ-eauA5swjbH6GX_8K-xEfwcb3Jt2h5CeC7_xFOkH3-qjm69sZmQfT7qXNSW9ZwFsNTSakdZb9FYG2Wxmn4CXvogZiunCdtJ4tlRPmACcEUACjCVmEseZ0mZTpC5hlqaXdEi01-7JIleohlo2MYDBpImddoWBiAdsMdCm1hyh0buD_VI6wQqjqkLYCB2MvAfxbAwtZ-HE0cSDYdN9yFKhUKBtyBdkIBezcLtJuUq3Ri7tkjOAtMqrAdGA8o7rWS7HxegyVV0WND2OUeyCzLUNTVWw8A2Ad4UIbjXx9d4mlZbf8aZ6ZGL_LJ0jqL8CInRkd2d9ydi1wzue4=w1913-h186-s-no?authuser=0"} alt="logo Comercio com Causa nas cores verde e branca" />
+                            <img className='py-1.5 mb-2 w-72' src={LogoMenor} alt="logo Comercio com Causa nas cores verde e branca" />
                             
-                            <p className='py-1.5 text-gray-200 text-justify md:w-2/3 xl:w-full'>Nossa empresa é mais do que apenas um e-commerce de alimentos naturais. Somos uma comunidade que valoriza a sustentabilidade, o crescimento econômico e o trabalho decente. Junte-se a nós em nossa missão de fazer a diferença no mundo, um produto de cada vez.</p>
+                            <p className='py-1.5 text-gray-200 text-justify md:w-2/3 xl:w-full'>Nossa empresa é mais do que apenas um e-commerce. Somos uma comunidade que valoriza a sustentabilidade, o crescimento econômico e o trabalho decente. Junte-se a nós em nossa missão de fazer a diferença no mundo, um produto de cada vez.</p>
                         </div>
                         <div className='mt-2 text-gray-200 w-1/3 md:w-1/4 xl:w-32 38 xl:px-2 xl:ml-14'>
                             <h4 className='text-lg font-bold mb-2 text-white'>Mapa do Site</h4>

@@ -4,6 +4,7 @@ import { RotatingLines } from "react-loader-spinner";
 
 import { buscar, deletar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { toastAlerta } from "../../../utils/toastAlerta";
 
 import Produto from "../../../models/Produto";
 
@@ -27,7 +28,7 @@ function DeletarProduto() {
       });
     } catch (error: any) {
       if (error.toString().includes("403")) {
-        alert("O token expirou, favor logar novamente");
+        toastAlerta("O token expirou, favor logar novamente", "erro");
         handleLogout();
       }
     }
@@ -35,7 +36,7 @@ function DeletarProduto() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      toastAlerta("Você precisa estar logado", "erro");
       navigate("/login");
     }
   }, [token]);
@@ -56,9 +57,9 @@ function DeletarProduto() {
         }
       });
 
-      alert("Produto apagado com sucesso");
+      toastAlerta("Produto apagado com sucesso", "sucesso");
     } catch (error) {
-      alert("Erro ao apagar o Produto");
+      toastAlerta("Erro ao apagar o Produto", "erro");
     }
 
     setIsLoading(false);
@@ -78,7 +79,7 @@ function DeletarProduto() {
       </p>
 
       <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-        <header className="py-2 px-6 bg-indigo-600 text-white font-bold text-2xl">
+        <header className="py-2 px-6 bg-[#385937] text-white font-bold text-2xl">
           Produto
         </header>
 
@@ -95,8 +96,7 @@ function DeletarProduto() {
           </button>
 
           <button
-            className="w-full text-slate-100 bg-indigo-400 
-                hover:bg-indigo-600 flex items-center justify-center"
+            className="w-full text-slate-100 bg-emerald-400 hover:bg-emerald-500 flex items-center justify-center"
             onClick={deletarProduto}
           >
             {isLoading ? (

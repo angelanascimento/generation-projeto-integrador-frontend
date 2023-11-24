@@ -60,10 +60,10 @@ function DeletarCategoria() {
                 }
             })
 
-            toastAlerta('Tema apagado com sucesso','sucesso')
+            toastAlerta('Categoria apagada com sucesso','sucesso')
 
         } catch (error) {
-            toastAlerta('Erro ao apagar o Tema','erro')
+            toastAlerta('Erro ao apagar o Categoria','erro')
         }
 
         setIsLoading(false)
@@ -83,7 +83,7 @@ function DeletarCategoria() {
 
             <div className='border flex flex-col line-clamp-4 rounded-2xl overflow-hidden justify-between'>
                 <header className='py-2 px-6 bg-[#385937] text-white font-bold text-base'>
-                    Tema
+                    Categoria
                 </header>
                 <p className='p-8 text-lg bg-slate-200 h-full'>{categoria.description}</p>
 
@@ -119,4 +119,4 @@ function DeletarCategoria() {
         </div>
     )
 }
-export default DeletarCategoria
+export default DeletarCategoria;
