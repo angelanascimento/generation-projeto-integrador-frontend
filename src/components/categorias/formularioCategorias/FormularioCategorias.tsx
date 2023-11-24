@@ -50,7 +50,8 @@ function FormularioCategorias() {
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setCategoria({
       ...categoria,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value, 
+      products: null
     });
   }
 
@@ -119,15 +120,18 @@ function FormularioCategorias() {
             value={categoria.name}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
+        </div>
 
+        <div className="flex flex-col gap-2">
+          <label htmlFor="descricao">Descrição da Categoria</label>
           <input
-            type="text"
-            placeholder="Nome da sua categoria"
-            name="description"
-            className="border-2 border-slate-700 rounded p-2"
-            value={categoria.description}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+              type="text"
+              placeholder="Descrição da sua categoria"
+              name="description"
+              className="border-2 border-slate-700 rounded p-2"
+              value={categoria.description}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
         </div>
         <button
           className="rounded text-slate-100 bg-indigo-400 
