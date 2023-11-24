@@ -13,7 +13,7 @@ function Carousel() {
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
-                delay: 7500,
+                delay: 9500,
                 disableOnInteraction: false,
                 }}
                 pagination={{
@@ -24,7 +24,7 @@ function Carousel() {
                 className="mySwiper h-[22rem]"
             >
                 <SwiperSlide>
-                    <div className="bg-slate-800 flex justify-center h-full ">
+                    <div className="bg-cor-primaria flex justify-center h-full ">
                         <div className="container grid md:grid-cols-9 text-white xl:w-[90rem]">
                             <div className="flex  flex-col gap-4 items-center justify-center py-4 col-start-1 col-span-3">
                                 <h2 className="text-5xl font-bold ">Seja Bem Vinde!</h2>

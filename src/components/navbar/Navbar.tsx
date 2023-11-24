@@ -20,7 +20,7 @@ function Navbar() {
   if (usuario.token !== "") {
     component = (
       <div
-        className="w-full bg-[#385937] text-white
+        className="w-full bg-[#2A332A] text-white
                 flex justify-center py-4"
       >
         <div className="container flex justify-between text-lg navbarContainer">
