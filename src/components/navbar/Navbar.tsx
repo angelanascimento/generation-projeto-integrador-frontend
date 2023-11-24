@@ -20,20 +20,19 @@ function Navbar() {
   if (usuario.token !== "") {
     component = (
       <div
-        className="w-full bg-[#385937] text-white
+        className="w-full bg-[#2A332A] text-white
                 flex justify-center py-4"
       >
         <div className="container flex justify-between text-lg navbarContainer">
           <Link to="/home">
             <img
-              className="navbarLogo"
+              className="navbarLogo hidden md:flex"
               src={logo}
               alt="logo comercio com causa"
             />
             {/* Comercio Com Causa */}
           </Link>
-
-          <div className="flex gap-4">
+          <div className="flex gap-2 justify-around md:gap-5 md:text-lg text-base font-medium w-[40rem] ">
             <Link to="/home" className="hover:underline">
               Home
             </Link>

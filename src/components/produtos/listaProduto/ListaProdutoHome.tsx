@@ -45,7 +45,7 @@ function ListaProdutoHome() {
 
   return (
     <>
-      <section className="flex flex-col w-full md:w-5/6 lg:w-5/6 xl:w-5/6  mx-auto my-4">
+      <section className="flex flex-col w-full md:w-5/6 lg:w-5/6 xl:w-5/6  mx-auto my-12">
         <h3 className="font-bold text-2xl">Destaques</h3>
         {produto.length === 0 && (
           <Dna

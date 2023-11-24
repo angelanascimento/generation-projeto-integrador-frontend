@@ -17,7 +17,7 @@ function CardProduto({ post }: CardProdutoProps) {
       <div>
         <div className="flex w-full h-[10rem] items-center gap-4">
           <img
-            src={post.image_url? post.image_url : defaultProductImage}
+            src={post.image_url ? post.image_url : defaultProductImage}
             className="w-full h-full object-cover border-transparent rounded-lg"
             alt="Imagem do Produto"
           />
@@ -31,28 +31,28 @@ function CardProduto({ post }: CardProdutoProps) {
             <ul className="w-fit font-semibold">
               <li className="flex gap-0.5">
                 <h3>Vendedor:</h3>
-                <span className="font-normal">{post.user?.name}</span>
+                <span className="line-clamp-1 font-normal pl-2">{post.user?.name}</span>
               </li>
               <li className="flex gap-0.5">
                 <h3>Categoria:</h3>
-                <span className="font-normal">
-                  {post.category?.description}
+                <span className="line-clamp-1 font-normal pl-2">
+                  {post.name}
                 </span>
               </li>
               <li className="flex gap-0.5">
                 <h3>Descrição:</h3>
-                <span className="line-clamp-1 font-normal">
+                <span className="line-clamp-1 font-normal pl-2">
                   {post.description}
                 </span>
               </li>
               <li className="flex gap-0.5">
                 <h3>Data:</h3>
-                <span className="font-normal">{dateFormat(new Date())}</span>
+                <span className="font-normal pl-2">{dateFormat(new Date())}</span>
               </li>
 
               <li className="flex gap-0.5 items-baseline">
                 <h3>Preço:</h3>
-                <span className="text-2xl text-cor-primaria">
+                <span className="text-[1.4rem] text-cor-primaria pl-2">
                   {currencyFormat.format(post.price)}
                 </span>
               </li>
