@@ -11,9 +11,7 @@
 </div>
 
 <div style="display: inline_block">
-   <img src="">
-   <img src="">
-   <img src="">
+   <h3>Link do site: https://generation-projeto-integrador-frontend.vercel.app/</h3>
 </div>
 
 <div style="display: inline_block">
@@ -30,6 +28,7 @@
 
 <div style="display: inline_block">
   <h2>:orange_circle:Ferramentas utilizadas para a Gestão do projeto</h2> 
+  <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white">
   <img src="https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white">
   <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
